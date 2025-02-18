@@ -1,11 +1,11 @@
-// const http = require('http');
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-// const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 const compression = require("compression");
+// const http = require('http');
+// const jwt = require("jsonwebtoken");
 
 // Import Routes
 const authRoutes = require("./routes/authRoutes");
