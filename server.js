@@ -1,11 +1,10 @@
+// const http = require('http');
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const compression = require("compression");
-// const http = require('http');
-// const jwt = require("jsonwebtoken");
 
 // Import Routes
 const authRoutes = require("./routes/authRoutes");
@@ -20,7 +19,6 @@ dotenv.config();
 
 const app = express(); // Corrected line
 
-// Middleware
 app.use(cors({
   origin: ['http://localhost:3000', 'http://localhost:5173'], // Allow both frontends
   methods: ['GET', 'POST', 'PUT', 'DELETE'],

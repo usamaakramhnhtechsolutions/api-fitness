@@ -14,12 +14,10 @@ const getCommunityPost = async (req, res) => {
 const addCommunity = async (req, res) => {
     try {
       const { author, content } = req.body;
-  
       // Basic validation
       if (!author || !author.name || !author.image || !content) {
         return res.status(400).json({ error: 'Missing required fields' });
       }
-  
       const newPost = new Post({ 
         author: { name: author.name, image: author.image }, 
         content, 
@@ -27,9 +25,7 @@ const addCommunity = async (req, res) => {
         comments: [], 
         time: new Date().toLocaleString() 
       });
-  
       await newPost.save(); 
-  
       res.status(201).json(newPost); 
     } catch (err) {
       console.error('Error creating post:', err); 
